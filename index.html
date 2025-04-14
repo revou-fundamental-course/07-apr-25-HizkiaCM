@@ -1,10 +1,95 @@
+
 <!DOCTYPE html>
-<html lang="en">
-
-
+<html lang="id">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="wi"
-    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Harfi Nourian Profile</title>
+    <link rel="stylesheet" href="style.css">
 </head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">
+                <div class="main-logo"></div>
+            </div>
+            <nav>
+                <a href="#" class="active">Beranda</a>
+                <a href="#">Profil</a>
+                <a href="#">Portofolio</a>
+                <a href="#">Hubungi</a>
+            </nav>
+        </header>
+
+        <main>
+            <section class="welcome section-content">
+                <h1>Hai Harfi, Selamat Datang</h1>
+                <p>Ini adalah website latihan pertama</p>
+                <div class="banner-img"></div>
+            </section>
+
+            <section class="kantor section-content">
+                <h2>Kantor Kami</h2>
+                <div class="kota-container">
+                    <div class="kota">
+                        <div class="lingkaran"></div>
+                        <p>Jakarta</p>
+                    </div>
+                    <div class="kota">
+                        <div class="lingkaran"></div>
+                        <p>Bandung</p>
+                    </div>
+                    <div class="kota">
+                        <div class="lingkaran"></div>
+                        <p>Surabaya</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="pesan section-content">
+                <h2>Kirim Pesan</h2>
+                <div class="form-container">
+                    <form id="pesanForm">
+                        <div class="form-group">
+                            <label>Nama:</label>
+                            <input type="text" id="nama" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Tanggal Lahir:</label>
+                            <input type="date" id="tanggalLahir" required>
+                        </div>
+                        <div class="form-group jenis-kelamin">
+                            <label>Jenis Kelamin:</label>
+                            <div>
+                                <input type="radio" id="lakiLaki" name="jenisKelamin" value="Laki-Laki" checked>
+                                <label for="lakiLaki">Laki-Laki</label>
+                                <input type="radio" id="perempuan" name="jenisKelamin" value="Perempuan">
+                                <label for="perempuan">Perempuan</label>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label>Pesan:</label>
+                            <textarea id="pesan" required></textarea>
+                        </div>
+                        <button type="submit">Kirim</button>
+                    </form>
+                    <div class="pesan-tampilan">
+                        <h3>Data Terakhir:</h3>
+                        <p id="namaTampilan">-</p>
+                        <p id="tanggalLahirTampilan">-</p>
+                        <p id="jenisKelaminTampilan">-</p>
+                        <p id="pesanTampilan">-</p>
+                        <p id="waktuTampilan">-</p>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <p>Hizkia Christian Meganatahan</p>
+        </footer>
+    </div>
+    <script src="https://cdn.gpteng.co/gptengineer.js" type="module"></script>
+    <script src="script.js"></script>
+</body>
 </html>
