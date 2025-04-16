@@ -1,55 +1,44 @@
-document.addEventListener('DOMContentLoaded', function() {
-    const form = document.getElementById('pesanForm');
-    const namaTampilan = document.getElementById('namaTampilan');
-    const tanggalLahirTampilan = document.getElementById('tanggalLahirTampilan');
-    const jenisKelaminTampilan = document.getElementById('jenisKelaminTampilan');
-    const pesanTampilan = document.getElementById('pesanTampilan');
-    const waktuTampilan = document.getElementById('waktuTampilan');
-    const welcomeHeading = document.querySelector('.welcome h1');
+// Function to validate the form
+function validateForm() {
+    const name = document.getElementById('name').value;
 
-    // Contoh data awal
-    const defaultName = 'Harfi';
-    namaTampilan.textContent = 'Harfi Nourian';
-    tanggalLahirTampilan.textContent = '01/11/1995';
-    jenisKelaminTampilan.textContent = 'Laki-Laki';
-    pesanTampilan.textContent = 'Lagi Belajar buat Website';
-    welcomeHeading.textContent = `Hai ${defaultName}, Selamat Datang`;
+    if (name == '') {
+        /// Disini logika ketika gagal
+        alert('Please enter your name');
+    } else {
+        /// Disini logika ketika sukses
+        alert('Form submitted successfully');
+    }
+}
 
-    function updateWaktu() {
-        const sekarang = new Date();
-        const opsiWaktu = {
-            weekday: 'short',
-            month: 'short',
-            day: 'numeric',
-            year: 'numeric',
-            hour: '2-digit',
-            minute: '2-digit',
-            second: '2-digit',
-            timeZoneName: 'short'
-        };
-        waktuTampilan.textContent = sekarang.toLocaleString('id-ID', opsiWaktu);
+let indexBanner = 0;
+
+function nextBanner() {
+    indexBanner += 1;
+    showBanner();
+}
+
+function showBanner() {
+    const bannerList = document.getElementsByClassName('banner-img');
+
+    // Check if indexBanner is greater than the length of the bannerList
+    if (indexBanner > bannerList.length - 1) {
+        indexBanner = 0;
     }
 
-    // Update waktu setiap detik
-    updateWaktu();
-    setInterval(updateWaktu, 1000);
+    // Hide banner with looping
+    for (let i = 0; i < bannerList.length; i++) {
+        bannerList[i].style = 'display: none';
+    }
 
-    form.addEventListener('submit', function(e) {
-        e.preventDefault();
+    // Show the banner
+    bannerList[indexBanner].style = 'display: block';
+}
 
-        const nama = document.getElementById('nama').value;
-        const tanggalLahir = document.getElementById('tanggalLahir').value;
-        const jenisKelamin = document.querySelector('input[name="jenisKelamin"]:checked').value;
-        const pesan = document.getElementById('pesan').value;
+showBanner();
 
-        // Memperbarui tampilan data
-        namaTampilan.textContent = nama;
-        tanggalLahirTampilan.textContent = tanggalLahir;
-        jenisKelaminTampilan.textContent = jenisKelamin;
-        pesanTampilan.textContent = pesan;
-        
-        // Memperbarui welcome heading dengan nama dari form
-        const firstName = nama.split(' ')[0]; // Mengambil nama pertama saja
-        welcomeHeading.textContent = `Hai ${firstName}, Selamat Datang`;
-    });
-});
+// Set interval to change the banner every 3 seconds
+setInterval(() => {
+    nextBanner();
+}, 3000);
+// Function to toggle the menu
