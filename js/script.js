@@ -33,9 +33,9 @@ if (welcomeEl) {
         },
         {
             title: "Project 3",
-            description: "Description for project 2.",
+            description: "Description for project 3.",
             image: "assets/web des.png",
-            link: "https://hizkiacm.github.io/Data-Pegawai/"
+            link: "https://revou-fundamental-course.github.io/07-apr-25-HizkiaCM/"
         },
 
     ];
